@@ -1,0 +1,120 @@
+// ShapeScript document
+
+detail 32
+
+define x0 0.0
+define y0 0.0
+define x1 1.0 
+define y1 0.0
+define x2 0.50
+define y2 ((sqrt 3) / 2)
+
+define triangle1 {
+    extrude path {
+        point x0 y0 
+        point x1 y1 
+        point x2 y2
+        point x0 y0
+        point (x1 / 2) 0
+        point (3 * x1 / 4) (y2 / 2)
+        point (x1 / 4) (y2 / 2)
+        point (x1 / 2) 0
+    }
+}
+// triangle1
+
+define triangle2 {
+    group {
+        triangle1
+        translate x1 0 0
+        triangle1
+        translate -x2 y2 0
+        triangle1
+        translate -x2 -y2 
+    }
+}
+scale 0.5
+// triangle2
+
+define triangle3 {
+    group {
+        triangle2
+        translate (2 * x1) 0 0
+        triangle2
+        translate (-2 * x2) (2 * y2) 0
+        triangle2
+        translate (-2 * x2) (-2 * y2)
+    }
+}
+scale 0.5
+// triangle3
+
+define triangle4 {
+    group {
+        triangle3
+        translate (4 * x1) 0 0
+        triangle3
+        translate (-4 * x2) (4 * y2) 0
+        triangle3
+        translate (-4 * x2) (-4 * y2) 0 
+    }
+    
+}
+scale 0.5
+// triangle4
+
+define triangle5 {
+    group {
+        triangle4 
+        translate (8 * x1) 0 0
+        triangle4
+        translate (-8 * x2) (8 * y2) 0
+        triangle4
+        translate (-8 * x2) (-8 * y2) 0
+    }
+}
+scale 0.5
+// triangle5
+
+define triangle6 {
+    group {
+        triangle5
+        translate (16 * x1) 0 0
+        triangle5
+        translate (-16 * x2) (16 * y2) 0
+        triangle5
+        translate (-16 * x2) (-16 * y2) 0
+    }
+}
+scale 0.5
+// triangle6
+
+define triangle7 {
+    group {
+        triangle6
+        translate (32 * x1) 0 0
+        triangle6
+        translate (-32 * x2) (32 * y2) 0
+        triangle6
+        translate (-32 * x2) (-32 * y2) 0
+    }
+}
+scale 0.5
+triangle7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
